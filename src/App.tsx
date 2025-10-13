@@ -77,40 +77,131 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="px-[35px] py-[60px]">
+            <div className="px-[35px] py-[80px]">
                 <div className="font-bold text-2xl">Projects</div>
-                <div className="mt-10">
-                    <Project />
+                <div className="mt-15 flex flex-col gap-15">
+                    <Project
+                        title="NAASH"
+                        description="A Shell faster than your thoughts"
+                        github="https://github.com/Sushants-Git/naash"
+                        video="https://www.youtube.com/watch?v=6xZ1Gxxiu1U"
+                        details={[
+                            <>
+                                AI-powered terminal shell that enhances speed
+                                and efficiency through natural language
+                                interaction, clipboard and error log history.
+                            </>,
+                            <>
+                                Won{" "}
+                                <TextLink
+                                    href="https://devfolio.co/projects/yaash-yet-another-ai-shell-192b"
+                                    target="_blank"
+                                >
+                                    HackThisFall 2024
+                                </TextLink>{" "}
+                                Virtual and received a prize of{" "}
+                                <span className="font-bold">$1000</span> USD.
+                            </>,
+                            <>Stack — Node.js, CLI, AI</>,
+                        ]}
+                    />
+
+                    <Project
+                        title="Locus"
+                        description="Tracking your focused moments"
+                        github="https://github.com/Sushants-Git/locus"
+                        video="https://www.youtube.com/watch?v=qW-37O67yW0"
+                        details={[
+                            <>
+                                Intelligent activity tracker that helps you
+                                understand and improve your focus habits.
+                            </>,
+                            <>
+                                It’s a{" "}
+                                <TextLink
+                                    href="https://github.com/Sushants-Git/locus?tab=readme-ov-file#installation"
+                                    target="_blank"
+                                >
+                                    desktop application
+                                </TextLink>{" "}
+                                currently available for Linux distributions.
+                            </>,
+                            <>Stack — Tauri, Rust, React, Linux</>,
+                        ]}
+                    />
+
+                    <Project
+                        title="DejaVu"
+                        description="A better way of finding bookmarks"
+                        github="https://github.com/Sushants-Git/Deja-Vu"
+                        video="https://www.youtube.com/watch?v=1E9y_XeGhkY"
+                        details={[
+                            <>
+                                A lightweight Chrome extension powered by a
+                                local BERT model that lets you find bookmarks
+                                through sentence similarity — even when you
+                                can’t recall the exact words.
+                            </>,
+                            <>Stack — Transformers.js, Chrome extension</>,
+                        ]}
+                    />
                 </div>
             </div>
         </main>
     );
 }
 
-function Project() {
+type ProjectProps = {
+    title: string;
+    description: React.ReactNode;
+    github?: string;
+    video?: string;
+    details: React.ReactNode[]; // exactly three
+    className?: string;
+};
+
+function Project({
+    title,
+    description,
+    github,
+    video,
+    details,
+    className = "",
+}: ProjectProps) {
     return (
-        <div>
-            <div className="font-bold">NAASH</div>
-            <div className="text-soft">A Shell faster than your thoughts</div>
+        <div className={className}>
+            {/* Header */}
+            <div className="flex gap-4 items-center">
+                <div className="font-bold text-lg">{title}</div>
+                <div className="fill-soft flex gap-3">
+                    {github && (
+                        <IconLink
+                            href={github}
+                            target="_blank"
+                            className="[&>svg]:w-[1.6rem] [&>svg]:h-[1.6rem]"
+                        >
+                            <GithubSvg />
+                        </IconLink>
+                    )}
+                    {video && (
+                        <IconLink
+                            href={video}
+                            target="_blank"
+                            className="[&>svg]:w-[1.6rem] [&>svg]:h-[1.6rem]"
+                        >
+                            <VideoSvg />
+                        </IconLink>
+                    )}
+                </div>
+            </div>
+
+            <div className="text-soft">{description}</div>
+
             <div className="mt-5">
                 <ul className="list-disc marker:text-soft flex flex-col gap-2">
-                    <li>
-                        AI-powered terminal shell that enhances speed and
-                        efficiency through natural language interaction,
-                        clipboard and error log history.
-                    </li>
-                    <li>
-                        Won{" "}
-                        <TextLink
-                            href="https://devfolio.co/projects/yaash-yet-another-ai-shell-192b"
-                            target="_blank"
-                        >
-                            HackThisFall 2024
-                        </TextLink>{" "}
-                        Virtual and received a prize of{" "}
-                        <span className="font-bold">$1000</span> USD.
-                    </li>
-                    <li>Stack - Node.js, CLI, AI</li>
+                    {details.map((node, i) => (
+                        <li key={i}>{node}</li>
+                    ))}
                 </ul>
             </div>
         </div>
@@ -185,6 +276,14 @@ function PaperclipSvg() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <path d="M288.6 76.8C344.8 20.6 436 20.6 492.2 76.8C548.4 133 548.4 224.2 492.2 280.4L328.2 444.4C293.8 478.8 238.1 478.8 203.7 444.4C169.3 410 169.3 354.3 203.7 319.9L356.5 167.3C369 154.8 389.3 154.8 401.8 167.3C414.3 179.8 414.3 200.1 401.8 212.6L249 365.3C239.6 374.7 239.6 389.9 249 399.2C258.4 408.5 273.6 408.6 282.9 399.2L446.9 235.2C478.1 204 478.1 153.3 446.9 122.1C415.7 90.9 365 90.9 333.8 122.1L169.8 286.1C116.7 339.2 116.7 425.3 169.8 478.4C222.9 531.5 309 531.5 362.1 478.4L492.3 348.3C504.8 335.8 525.1 335.8 537.6 348.3C550.1 360.8 550.1 381.1 537.6 393.6L407.4 523.6C329.3 601.7 202.7 601.7 124.6 523.6C46.5 445.5 46.5 318.9 124.6 240.8L288.6 76.8z" />
+        </svg>
+    );
+}
+
+function VideoSvg() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <path d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z" />
         </svg>
     );
 }
