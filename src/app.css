@@ -4,20 +4,19 @@
     --color-fold-light-blue: var(--fold-light-blue);
     --color-fold-blue: var(--fold-blue);
     --color-blue: var(--fold-blue);
-    --color-soft: var(--fold-soft);
     --color-link: var(--fold-link);
 
     --radius-xxl: 24px;
-    --font-inter: "Inter";
+    --font-inter: "Geist", sans-serif;
     --leading-fold: var(--lh-fold);
 }
 
 :root {
-    --fold-light-blue: rgb(240 241 245);
-    --fold-blue: rgb(32 41 76);
-    --fold-soft: rgb(103 107 137);
-    --fold-link: rgb(69 154 248);
-    --lh-fold: 1.8rem;
+    --fold-light-blue: #fafafa;
+    --fold-blue: black;
+    --fold-link: black;
+    /* rgb(69 154 248); */
+    --lh-fold: 1.7rem;
 
     --layout-side-padding-min: 1rem;
     --layout-side-padding: max(

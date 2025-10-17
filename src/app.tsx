@@ -1,4 +1,4 @@
-import "./App.css";
+import "./app.css";
 
 function App() {
     return <Home />;
@@ -19,7 +19,7 @@ function TextLink({
         <a
             href={href}
             target={target}
-            className={`${className} border-b-2 border-soft/30 hover:border-soft/80`}
+            className={`${className} border-b-2 border-neutral-600/30 hover:border-neutral-600/80`}
         >
             {children}
         </a>
@@ -51,12 +51,12 @@ function IconLink({
 function Home() {
     return (
         <main className="home max-w-[calc(100vw-48px)] mx-auto pb-[100px] lg:max-w-[950px] font-inter leading-fold text-lg">
-            <div className="bg-white rounded-xxl p-[35px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px] mt-14">
+            <div className="rounded-xxl p-[35px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px] mt-40">
                 <div className="flex flex-col gap-2 md:flex md:flex-row md:justify-between">
                     <div>
                         <div className="font-bold text-2xl">Sushant Mishra</div>
-                        <div className="text-soft">
-                            22, Software Engineer & Designer
+                        <div className="text-neutral-600">
+                            22 · Software Engineer
                         </div>
                     </div>
                     <Socials />
@@ -77,6 +77,74 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+            <div className="px-[35px] py-[80px]">
+                <div className="font-bold text-2xl">Experience</div>
+                <div className="mt-15 flex flex-col gap-15">
+                    <div>
+                        <div className="flex flex-col">
+                            <div className="font-semibold text-lg">
+                                Swipe (YC S21)
+                            </div>
+                            <div className="text-neutral-600">
+                                Full-Time · Jan 25 - Current
+                            </div>
+                        </div>
+
+                        <div className="mt-3">
+                            <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
+                                <li>
+                                    Built the recurring payments flow, ensuring
+                                    single-charge cycles and accurate invoice
+                                    linkage.
+                                </li>
+                                <li>
+                                    Diagnosed and fixed a critical Express
+                                    server memory leak caused by the PDF
+                                    generation service.
+                                </li>
+                                <li>
+                                    Improved frontend performance through bundle
+                                    reduction, CSS-based behaviors, and code
+                                    optimizations.
+                                </li>
+                                <li>
+                                    Rewrote the settings and preferences UI with
+                                    cleaner state management and better user
+                                    experience.
+                                </li>
+
+                                {/* <li> */}
+                                {/*     Built the recurring payments flow, */}
+                                {/*     generating invoices on renewal dates, */}
+                                {/*     ensuring only one payment gets triggered per */}
+                                {/*     cycle, and linking payments back to */}
+                                {/*     invoices. */}
+                                {/* </li> */}
+                                {/* <li> */}
+                                {/*     Diagnosed and resolved a critical memory */}
+                                {/*     leak in the Express server stemming from the */}
+                                {/*     PDF generation service, improving uptime and */}
+                                {/*     resource efficiency. */}
+                                {/* </li> */}
+                                {/* <li> */}
+                                {/*     Frontend performance improvements through */}
+                                {/*     bundle size reduction, using CSS for UI */}
+                                {/*     behaviors instead of React state, and */}
+                                {/*     overall code optimization. */}
+                                {/* </li> */}
+                                {/* <li> */}
+                                {/*     Rebuilt the settings and preferences page, a */}
+                                {/*     tedious UI overhaul involving multiple */}
+                                {/*     interactive forms and state management */}
+                                {/*     cleanup. */}
+                                {/* </li> */}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div className="px-[35px] py-[80px]">
                 <div className="font-bold text-2xl">Projects</div>
                 <div className="mt-15 flex flex-col gap-15">
@@ -87,7 +155,7 @@ function Home() {
                         video="https://www.youtube.com/watch?v=6xZ1Gxxiu1U"
                         details={[
                             <>
-                                AI-powered terminal shell that enhances speed
+                                AI-powered terminal shell that improves speed
                                 and efficiency through natural language
                                 interaction, clipboard and error log history.
                             </>,
@@ -137,10 +205,13 @@ function Home() {
                         video="https://www.youtube.com/watch?v=1E9y_XeGhkY"
                         details={[
                             <>
-                                A lightweight Chrome extension powered by a
-                                local BERT model that lets you find bookmarks
-                                through sentence similarity — even when you
-                                can’t recall the exact words.
+                                Lightweight Chrome extension powered by a local
+                                BERT model.
+                            </>,
+                            <>
+                                Lets you find bookmarks through sentence
+                                similarity, helpful when you can’t recall the
+                                exact words.
                             </>,
                             <>Stack — Transformers.js, Chrome extension</>,
                         ]}
@@ -171,9 +242,9 @@ function Project({
     return (
         <div className={className}>
             {/* Header */}
-            <div className="flex gap-4 items-center">
-                <div className="font-bold text-lg">{title}</div>
-                <div className="fill-soft flex gap-3">
+            <div className="flex gap-3 items-center">
+                <div className="font-semibold text-lg">{title}</div>·
+                <div className="fill-neutral-600 flex gap-3 justify-center">
                     {github && (
                         <IconLink
                             href={github}
@@ -195,10 +266,10 @@ function Project({
                 </div>
             </div>
 
-            <div className="text-soft">{description}</div>
+            <div className="text-neutral-600">{description}</div>
 
-            <div className="mt-5">
-                <ul className="list-disc marker:text-soft flex flex-col gap-2">
+            <div className="mt-3">
+                <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
                     {details.map((node, i) => (
                         <li key={i}>{node}</li>
                     ))}
@@ -210,7 +281,7 @@ function Project({
 
 function Socials() {
     return (
-        <div className="flex gap-4 md:gap-5 fill-soft items-center-safe">
+        <div className="flex gap-4 md:gap-5 fill-neutral-600 items-center-safe">
             <IconLink
                 href="https://github.com/Sushants-Git"
                 target="_blank"
