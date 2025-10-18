@@ -50,7 +50,7 @@ function IconLink({
 
 function Home() {
     return (
-        <main className="home max-w-[calc(100vw-48px)] mx-auto pb-[100px] lg:max-w-[950px] font-inter leading-fold text-lg">
+        <main className="home md:max-w-[calc(100vw-48px)] mx-auto pb-[100px] lg:max-w-[950px] font-inter leading-fold text-lg">
             <div className="rounded-xxl p-[35px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px] mt-40">
                 <div className="flex flex-col gap-2 md:flex md:flex-row md:justify-between">
                     <div>
