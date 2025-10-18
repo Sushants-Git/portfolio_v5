@@ -113,39 +113,41 @@ function Home() {
                                     cleaner state management and better user
                                     experience.
                                 </li>
+                            </ul>
+                        </div>
+                    </div>
 
-                                {/* <li> */}
-                                {/*     Built the recurring payments flow, */}
-                                {/*     generating invoices on renewal dates, */}
-                                {/*     ensuring only one payment gets triggered per */}
-                                {/*     cycle, and linking payments back to */}
-                                {/*     invoices. */}
-                                {/* </li> */}
-                                {/* <li> */}
-                                {/*     Diagnosed and resolved a critical memory */}
-                                {/*     leak in the Express server stemming from the */}
-                                {/*     PDF generation service, improving uptime and */}
-                                {/*     resource efficiency. */}
-                                {/* </li> */}
-                                {/* <li> */}
-                                {/*     Frontend performance improvements through */}
-                                {/*     bundle size reduction, using CSS for UI */}
-                                {/*     behaviors instead of React state, and */}
-                                {/*     overall code optimization. */}
-                                {/* </li> */}
-                                {/* <li> */}
-                                {/*     Rebuilt the settings and preferences page, a */}
-                                {/*     tedious UI overhaul involving multiple */}
-                                {/*     interactive forms and state management */}
-                                {/*     cleanup. */}
-                                {/* </li> */}
+                    <div>
+                        <div className="flex flex-col">
+                            <div className="font-semibold text-lg">Catalog</div>
+                            <div className="text-neutral-600">
+                                Intern · Feb 24 - Sep 24
+                            </div>
+                        </div>
+
+                        <div className="mt-3">
+                            <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
+                                <li>
+                                    Built{" "}
+                                    <TextLink
+                                        href="https://testnetbtc.com/"
+                                        target="_blank"
+                                    >
+                                        BTC/ERC20 Testnet Faucet
+                                    </TextLink>
+                                    , that has handeled over 100K+ transactions,
+                                    as of Oct 25.
+                                </li>
+                                <li>
+                                    Building Demo Apps, for Garden SDK Cookbook.
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="px-[35px] py-[80px]">
+            <div className="px-[35px]">
                 <div className="font-bold text-2xl">Projects</div>
                 <div className="mt-15 flex flex-col gap-15">
                     <Project
