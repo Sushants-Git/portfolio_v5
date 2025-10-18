@@ -233,7 +233,7 @@ function Home() {
                 </div>
             </main>
             <div className="text-center mt-auto pb-[100px] text-neutral-400 text-lg">
-                <p> [This Space Intentionally Left Blank]</p>
+                <p> [This Space is Intentionally Left Blank]</p>
                 <p>
                     The bottom is padded so readers can maintain a consistent
                     eyeline.
