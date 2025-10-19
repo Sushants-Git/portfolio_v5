@@ -7,8 +7,8 @@
         "@tailwindcss/vite": "^4.1.14",
         "clsx": "^2.1.1",
         "motion": "^12.23.24",
-        "react": "^19.1.1",
-        "react-dom": "^19.1.1",
+        "react": "^19.3.0-canary-1324e1bb-20251016",
+        "react-dom": "^19.3.0-canary-1324e1bb-20251016",
         "react-router": "^7.9.4",
         "tailwind-merge": "^3.3.1",
         "tailwindcss": "^4.1.14",
@@ -510,9 +510,9 @@
 
     "queue-microtask": ["queue-microtask@1.2.3", "", {}, "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="],
 
-    "react": ["react@19.2.0", "", {}, "sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ=="],
+    "react": ["react@19.3.0-canary-1324e1bb-20251016", "", {}, "sha512-oZ45wjTfMGajBQysAHRgln/553on3/TxsdKJUh39mZmKVhC1vut2LzDae2cbAMtK7irKmgE7OfaVa2+ESxIE/w=="],
 
-    "react-dom": ["react-dom@19.2.0", "", { "dependencies": { "scheduler": "^0.27.0" }, "peerDependencies": { "react": "^19.2.0" } }, "sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ=="],
+    "react-dom": ["react-dom@19.3.0-canary-1324e1bb-20251016", "", { "dependencies": { "scheduler": "0.28.0-canary-1324e1bb-20251016" }, "peerDependencies": { "react": "19.3.0-canary-1324e1bb-20251016" } }, "sha512-Badz51jjju8xigsrbm4/lOaMATSDXSMOOA3uKWiyo0ZPVIH0RUCFWaoLRbyaLDHkLX3LOHMQyFt9B03MUj9cPg=="],
 
     "react-refresh": ["react-refresh@0.17.0", "", {}, "sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ=="],
 
@@ -526,7 +526,7 @@
 
     "run-parallel": ["run-parallel@1.2.0", "", { "dependencies": { "queue-microtask": "^1.2.2" } }, "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA=="],
 
-    "scheduler": ["scheduler@0.27.0", "", {}, "sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q=="],
+    "scheduler": ["scheduler@0.28.0-canary-1324e1bb-20251016", "", {}, "sha512-DuJnxMMc3dZUanGJr9KWzF6mdeSEUZ1ClXoeR56opSwPGVQN95yDRUzeIh6DCuUKM2IIEjJazVFAP5J6ivqBHw=="],
 
     "semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
 

@@ -13,8 +13,8 @@
     "@tailwindcss/vite": "^4.1.14",
     "clsx": "^2.1.1",
     "motion": "^12.23.24",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.3.0-canary-1324e1bb-20251016",
+    "react-dom": "^19.3.0-canary-1324e1bb-20251016",
     "react-router": "^7.9.4",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.14"
