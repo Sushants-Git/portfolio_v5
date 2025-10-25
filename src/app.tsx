@@ -4,20 +4,55 @@ import "./app.css";
 function App() {
     return (
         <div>
-            <main className="home md:max-w-[calc(100vw-48px)] mx-auto pb-[400px] lg:max-w-[950px] font-inter leading-fold text-lg">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/blog" element={<Blog />} />
-                </Routes>
-            </main>
+            <PatternSVG />
+            <div className="relative z-10">
+                <div className="flex">
+                    <div className="bg-bg border-l border-lines px-5 ml-auto"></div>
+                    <main className="home md:max-w-[calc(100vw-48px)] pb-[350px] lg:max-w-[1000px] lg:px-[25px] font-inter leading-fold text-lg bg-bg border-r border-lines">
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/blog" element={<Blog />} />
+                        </Routes>
+                    </main>
+                    <div className="bg-bg px-5 mr-auto border-r border-lines"></div>
+                </div>
 
-            <div className="text-center mt-auto px-[30px] pb-[100px] text-neutral-400 text-lg">
-                <p> [This Space is Intentionally Left Blank]</p>
-                <p>
-                    The bottom is padded so readers can maintain a consistent
-                    eyeline.
-                </p>
+                <div className="text-center mt-auto px-[30px] py-[50px] text-neutral-400 text-lg border border-lines">
+                    <p> [This Space is Intentionally Left Blank]</p>
+                    <p>
+                        The bottom is padded so readers can maintain a
+                        consistent eyeline.
+                    </p>
+                </div>
             </div>
+        </div>
+    );
+}
+
+function PatternSVG() {
+    return (
+        <div className="text-lines fixed inset-0">
+            <svg width="100%" height="100%">
+                <defs>
+                    <pattern
+                        viewBox="0 0 10 10"
+                        width="8"
+                        height="8"
+                        patternUnits="userSpaceOnUse"
+                        id=":S1:"
+                    >
+                        <line
+                            x1="0"
+                            y1="10"
+                            x2="10"
+                            y2="0"
+                            stroke="currentColor"
+                            vector-effect="non-scaling-stroke"
+                        ></line>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#:S1:)"></rect>
+            </svg>
         </div>
     );
 }
@@ -104,8 +139,8 @@ function IconLink({
 
 function Home() {
     return (
-        <>
-            <div className="px-[30px] pt-[35px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px] mt-40">
+        <div>
+            <div className="px-[30px] pt-[195px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px]">
                 <div className="flex flex-col gap-2 md:flex md:flex-row md:justify-between">
                     <div>
                         <div className="font-bold text-2xl">Sushant Mishra</div>
@@ -275,7 +310,7 @@ function Home() {
                     />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

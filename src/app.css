@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-    --color-fold-light-blue: var(--bg);
+    --color-bg: var(--bg);
     --color-fold-blue: var(--primary-text);
     --color-blue: var(--primary-text);
     --color-link: var(--link);
+    --color-lines: var(--color-gray-200);
 
     --radius-xxl: 24px;
     --font-inter: "Geist", sans-serif;
