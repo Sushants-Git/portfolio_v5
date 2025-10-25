@@ -8,7 +8,7 @@ function App() {
             <div className="relative z-10">
                 <div className="flex">
                     <div className="bg-bg border-l border-lines px-5 ml-auto hidden md:block"></div>
-                    <main className="home md:max-w-[calc(100vw-48px)] pb-[350px] lg:max-w-[1000px] lg:pr-[25px] font-inter leading-fold text-lg bg-bg border-l border-r border-lines/50">
+                    <main className="home md:max-w-[calc(100vw-48px)] lg:max-w-[1000px] lg:pr-[25px] font-inter leading-fold text-lg bg-bg border-l border-r border-lines/50">
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/blog" element={<Blog />} />
@@ -139,178 +139,282 @@ function IconLink({
 
 function Home() {
     return (
-        <div>
-            <div className="px-[30px] pt-[195px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px]">
-                <div className="flex flex-col gap-2 md:flex md:flex-row md:justify-between">
-                    <div>
-                        <div className="font-bold text-2xl">Sushant Mishra</div>
-                        <div className="text-neutral-600">
-                            22 · Software Engineer
-                        </div>
-                    </div>
-                    <Socials />
-                </div>
-
-                <div className="flex flex-col gap-4">
-                    <div>
-                        I’m a{" "}
-                        <span className="font-semibold">
-                            Full-Stack Developer
-                        </span>{" "}
-                        building performant web and desktop applications.
-                        Currently, I write and fix bugs at{" "}
-                        <TextLink href="https://getswipe.in/" target="_blank">
-                            Swipe (YC&nbsp;S21)
-                        </TextLink>
-                        . When I’m not writing bugs, I like to design.
-                    </div>
-                </div>
-            </div>
-
-            <div className="px-[30px] pt-[100px]">
-                <div className="font-bold text-2xl">Experience</div>
-                <div className="mt-15 flex flex-col gap-15">
-                    <div>
-                        <div className="flex flex-col">
-                            <div className="font-semibold text-lg">
-                                Swipe (YC S21)
+        <>
+            <div className="pb-[350px]">
+                <div className="px-[30px] pt-[195px] flex flex-col gap-10 md:gap-6 justify-between">
+                    <div className="flex flex-col gap-2 md:flex md:flex-row md:justify-between">
+                        <div>
+                            <div className="font-bold text-2xl">
+                                Sushant Mishra
                             </div>
                             <div className="text-neutral-600">
-                                Full-Time · Jan 25 - Current
+                                22 · Software Engineer
                             </div>
                         </div>
-
-                        <div className="mt-3">
-                            <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
-                                <li>
-                                    Built the recurring payments flow, ensuring
-                                    single-charge cycles and accurate invoice
-                                    linkage.
-                                </li>
-                                <li>
-                                    Diagnosed and fixed a critical Express
-                                    server memory leak caused by the PDF
-                                    generation service.
-                                </li>
-                                <li>
-                                    Improved frontend performance through bundle
-                                    reduction, CSS-based behaviors, and code
-                                    optimizations.
-                                </li>
-                                <li>
-                                    Rewrote the settings and preferences UI with
-                                    cleaner state management and better user
-                                    experience.
-                                </li>
-                            </ul>
-                        </div>
+                        <Socials />
                     </div>
 
-                    <div>
-                        <div className="flex flex-col">
-                            <div className="font-semibold text-lg">Catalog</div>
-                            <div className="text-neutral-600">
-                                Intern · Feb 24 - Sep 24
+                    <div className="flex flex-col gap-4">
+                        <div>
+                            I’m a{" "}
+                            <span className="font-semibold">
+                                Full-Stack Developer
+                            </span>{" "}
+                            building performant web and desktop applications.
+                            Currently, I write and fix bugs at{" "}
+                            <TextLink
+                                href="https://getswipe.in/"
+                                target="_blank"
+                            >
+                                Swipe (YC&nbsp;S21)
+                            </TextLink>
+                            . When I’m not writing bugs, I like to design.
+                        </div>
+                    </div>
+                </div>
+
+                <div className="px-[30px] pt-[100px]">
+                    <div className="font-bold text-2xl">Experience</div>
+                    <div className="mt-15 flex flex-col gap-15">
+                        <div>
+                            <div className="flex flex-col">
+                                <div className="font-semibold text-lg">
+                                    Swipe (YC S21)
+                                </div>
+                                <div className="text-neutral-600">
+                                    Full-Time · Jan 25 - Current
+                                </div>
+                            </div>
+
+                            <div className="mt-3">
+                                <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
+                                    <li>
+                                        Designed and implemented the recurring
+                                        payments system with single-charge
+                                        billing and precise invoice
+                                        reconciliation.
+                                    </li>
+                                    <li>
+                                        Traced and resolved a critical memory
+                                        leak in the Express server’s PDF
+                                        generation pipeline, improving stability
+                                        and uptime.
+                                    </li>
+                                    <li>
+                                        Boosted frontend performance through
+                                        bundle optimization, efficient CSS
+                                        behaviors, and code refactoring.
+                                    </li>
+                                    <li>
+                                        Revamped the settings and preferences
+                                        interface with cleaner state management
+                                        and an improved user experience.
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div className="mt-3">
-                            <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
-                                <li>
-                                    Built{" "}
+                        <div>
+                            <div className="flex flex-col">
+                                <div className="font-semibold text-lg">
+                                    Catalog
+                                </div>
+                                <div className="text-neutral-600">
+                                    Intern · Feb 24 - Sep 24
+                                </div>
+                            </div>
+
+                            <div className="mt-3">
+                                <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
+                                    <li>
+                                        Built{" "}
+                                        <TextLink
+                                            href="https://testnetbtc.com/"
+                                            target="_blank"
+                                        >
+                                            BTC/ERC20 Testnet Faucet
+                                        </TextLink>
+                                        , widely used by developers for seamless
+                                        testnet transactions.
+                                    </li>
+
+                                    <li>
+                                        Building Demo Apps, for Garden SDK
+                                        Cookbook.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="px-[30px] pt-[100px]">
+                    <div className="font-bold text-2xl">Projects</div>
+                    <div className="mt-15 flex flex-col gap-15">
+                        <Project
+                            title="NAASH"
+                            description="A Shell faster than your thoughts"
+                            github="https://github.com/Sushants-Git/naash"
+                            video="https://www.youtube.com/watch?v=6xZ1Gxxiu1U"
+                            details={[
+                                <>
+                                    AI-powered terminal shell that improves
+                                    speed and efficiency through natural
+                                    language interaction, clipboard and error
+                                    log history.
+                                </>,
+                                <>
+                                    Won{" "}
                                     <TextLink
-                                        href="https://testnetbtc.com/"
+                                        href="https://devfolio.co/projects/yaash-yet-another-ai-shell-192b"
                                         target="_blank"
                                     >
-                                        BTC/ERC20 Testnet Faucet
-                                    </TextLink>
-                                    , widely used by developers for seamless
-                                    testnet transactions.
-                                </li>
+                                        HackThisFall 2024
+                                    </TextLink>{" "}
+                                    Virtual and received a prize of{" "}
+                                    <span className="font-bold">$1000</span>{" "}
+                                    USD.
+                                </>,
+                                <>Stack — Node.js, CLI, AI</>,
+                            ]}
+                        />
 
-                                <li>
-                                    Building Demo Apps, for Garden SDK Cookbook.
-                                </li>
-                            </ul>
-                        </div>
+                        <Project
+                            title="Locus"
+                            description="Tracking your focused moments"
+                            github="https://github.com/Sushants-Git/locus"
+                            video="https://www.youtube.com/watch?v=qW-37O67yW0"
+                            details={[
+                                <>
+                                    Intelligent activity tracker that helps you
+                                    understand and improve your focus habits.
+                                </>,
+                                <>
+                                    It’s a{" "}
+                                    <TextLink
+                                        href="https://github.com/Sushants-Git/locus?tab=readme-ov-file#installation"
+                                        target="_blank"
+                                    >
+                                        desktop application
+                                    </TextLink>{" "}
+                                    currently available for Linux distributions.
+                                </>,
+                                <>Stack — Tauri, Rust, React, Linux</>,
+                            ]}
+                        />
+
+                        <Project
+                            title="DejaVu"
+                            description="A better way of finding bookmarks"
+                            github="https://github.com/Sushants-Git/Deja-Vu"
+                            video="https://www.youtube.com/watch?v=1E9y_XeGhkY"
+                            details={[
+                                <>
+                                    Lightweight Chrome extension powered by a
+                                    local BERT model.
+                                </>,
+                                <>
+                                    Lets you find bookmarks through sentence
+                                    similarity, helpful when you can’t recall
+                                    the exact words.
+                                </>,
+                                <>Stack — Transformers.js, Chrome extension</>,
+                            ]}
+                        />
+                    </div>
+                </div>
+
+                <div className="px-[30px] pt-[100px]">
+                    <div className="font-bold text-2xl">Community</div>
+                    <div className="mt-15 flex flex-col gap-15">
+                        <Project
+                            title="NAASH"
+                            description="A Shell faster than your thoughts"
+                            github="https://github.com/Sushants-Git/naash"
+                            video="https://www.youtube.com/watch?v=6xZ1Gxxiu1U"
+                            details={[
+                                <>
+                                    AI-powered terminal shell that improves
+                                    speed and efficiency through natural
+                                    language interaction, clipboard and error
+                                    log history.
+                                </>,
+                                <>
+                                    Won{" "}
+                                    <TextLink
+                                        href="https://devfolio.co/projects/yaash-yet-another-ai-shell-192b"
+                                        target="_blank"
+                                    >
+                                        HackThisFall 2024
+                                    </TextLink>{" "}
+                                    Virtual and received a prize of{" "}
+                                    <span className="font-bold">$1000</span>{" "}
+                                    USD.
+                                </>,
+                                <>Stack — Node.js, CLI, AI</>,
+                            ]}
+                        />
+
+                        <Project
+                            title="Locus"
+                            description="Tracking your focused moments"
+                            github="https://github.com/Sushants-Git/locus"
+                            video="https://www.youtube.com/watch?v=qW-37O67yW0"
+                            details={[
+                                <>
+                                    Intelligent activity tracker that helps you
+                                    understand and improve your focus habits.
+                                </>,
+                                <>
+                                    It’s a{" "}
+                                    <TextLink
+                                        href="https://github.com/Sushants-Git/locus?tab=readme-ov-file#installation"
+                                        target="_blank"
+                                    >
+                                        desktop application
+                                    </TextLink>{" "}
+                                    currently available for Linux distributions.
+                                </>,
+                                <>Stack — Tauri, Rust, React, Linux</>,
+                            ]}
+                        />
+
+                        <Project
+                            title="DejaVu"
+                            description="A better way of finding bookmarks"
+                            github="https://github.com/Sushants-Git/Deja-Vu"
+                            video="https://www.youtube.com/watch?v=1E9y_XeGhkY"
+                            details={[
+                                <>
+                                    Lightweight Chrome extension powered by a
+                                    local BERT model.
+                                </>,
+                                <>
+                                    Lets you find bookmarks through sentence
+                                    similarity, helpful when you can’t recall
+                                    the exact words.
+                                </>,
+                                <>Stack — Transformers.js, Chrome extension</>,
+                            ]}
+                        />
                     </div>
                 </div>
             </div>
 
-            <div className="px-[30px] pt-[100px]">
-                <div className="font-bold text-2xl">Projects</div>
-                <div className="mt-15 flex flex-col gap-15">
-                    <Project
-                        title="NAASH"
-                        description="A Shell faster than your thoughts"
-                        github="https://github.com/Sushants-Git/naash"
-                        video="https://www.youtube.com/watch?v=6xZ1Gxxiu1U"
-                        details={[
-                            <>
-                                AI-powered terminal shell that improves speed
-                                and efficiency through natural language
-                                interaction, clipboard and error log history.
-                            </>,
-                            <>
-                                Won{" "}
-                                <TextLink
-                                    href="https://devfolio.co/projects/yaash-yet-another-ai-shell-192b"
-                                    target="_blank"
-                                >
-                                    HackThisFall 2024
-                                </TextLink>{" "}
-                                Virtual and received a prize of{" "}
-                                <span className="font-bold">$1000</span> USD.
-                            </>,
-                            <>Stack — Node.js, CLI, AI</>,
-                        ]}
+            <div className="pb-10 ml-7">
+                <div>
+                    <img
+                        src="/sushant.jpg"
+                        className="w-40 h-40 rounded-lg filter grayscale opacity-95
+                                   hover:grayscale-0 hover:opacity-100
+                                   transform hover:scale-105
+                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
+                                   will-change-transform cursor-pointer"
                     />
-
-                    <Project
-                        title="Locus"
-                        description="Tracking your focused moments"
-                        github="https://github.com/Sushants-Git/locus"
-                        video="https://www.youtube.com/watch?v=qW-37O67yW0"
-                        details={[
-                            <>
-                                Intelligent activity tracker that helps you
-                                understand and improve your focus habits.
-                            </>,
-                            <>
-                                It’s a{" "}
-                                <TextLink
-                                    href="https://github.com/Sushants-Git/locus?tab=readme-ov-file#installation"
-                                    target="_blank"
-                                >
-                                    desktop application
-                                </TextLink>{" "}
-                                currently available for Linux distributions.
-                            </>,
-                            <>Stack — Tauri, Rust, React, Linux</>,
-                        ]}
-                    />
-
-                    <Project
-                        title="DejaVu"
-                        description="A better way of finding bookmarks"
-                        github="https://github.com/Sushants-Git/Deja-Vu"
-                        video="https://www.youtube.com/watch?v=1E9y_XeGhkY"
-                        details={[
-                            <>
-                                Lightweight Chrome extension powered by a local
-                                BERT model.
-                            </>,
-                            <>
-                                Lets you find bookmarks through sentence
-                                similarity, helpful when you can’t recall the
-                                exact words.
-                            </>,
-                            <>Stack — Transformers.js, Chrome extension</>,
-                        ]}
-                    />
+                    <div className="text-neutral-600 italic mt-2">~ Me at my first in-person hackthon ( aka sleep deprived ) :)</div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
