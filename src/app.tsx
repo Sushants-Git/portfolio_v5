@@ -11,7 +11,7 @@ function App() {
                 </Routes>
             </main>
 
-            <div className="text-center mt-auto pb-[100px] text-neutral-400 text-lg">
+            <div className="text-center mt-auto px-[30px] pb-[100px] text-neutral-400 text-lg">
                 <p> [This Space is Intentionally Left Blank]</p>
                 <p>
                     The bottom is padded so readers can maintain a consistent
@@ -105,7 +105,7 @@ function IconLink({
 function Home() {
     return (
         <>
-            <div className="rounded-xxl p-[35px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px] mt-40">
+            <div className="px-[30px] pt-[35px] flex flex-col gap-10 md:gap-6 justify-between md:min-h-[290px] mt-40">
                 <div className="flex flex-col gap-2 md:flex md:flex-row md:justify-between">
                     <div>
                         <div className="font-bold text-2xl">Sushant Mishra</div>
@@ -132,7 +132,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="px-[35px] py-[80px]">
+            <div className="px-[30px] pt-[100px]">
                 <div className="font-bold text-2xl">Experience</div>
                 <div className="mt-15 flex flex-col gap-15">
                     <div>
@@ -201,7 +201,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="px-[35px] py-[30px]">
+            <div className="px-[30px] pt-[100px]">
                 <div className="font-bold text-2xl">Projects</div>
                 <div className="mt-15 flex flex-col gap-15">
                     <Project

@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-    --color-fold-light-blue: var(--fold-light-blue);
-    --color-fold-blue: var(--fold-blue);
-    --color-blue: var(--fold-blue);
-    --color-link: var(--fold-link);
+    --color-fold-light-blue: var(--bg);
+    --color-fold-blue: var(--primary-text);
+    --color-blue: var(--primary-text);
+    --color-link: var(--link);
 
     --radius-xxl: 24px;
     --font-inter: "Geist", sans-serif;
@@ -12,45 +12,15 @@
 }
 
 :root {
-    --fold-light-blue: #fafafa;
-    --fold-blue: black;
-    --fold-link: black;
-    /* rgb(69 154 248); */
+    --bg: #fafafa;
+    --primary-text: black;
+    --link: black;
     --lh-fold: 1.7rem;
-
-    --layout-side-padding-min: 1rem;
-    --layout-side-padding: max(
-        var(--layout-side-padding-min),
-        calc(50vw - 720px + 1rem)
-    );
-    --layout-full-width: calc(100vw - var(--layout-side-padding) * 2);
 }
 
 body,
 html {
-    background-color: var(--fold-light-blue);
-    color: var(--fold-blue);
+    background-color: var(--bg);
+    color: var(--primary-text);
     font-family: var(--font-inter), sans-serif;
-}
-
-.reference-layout {
-    display: grid;
-    grid: "body . toc";
-    grid-template-columns: 1fr 4rem minmax(100px, 0.5fr);
-}
-
-@media (max-width: 940px) {
-    .reference-layout {
-        display: grid;
-        grid: "body . toc";
-        grid-template-columns: 1fr 0 0;
-    }
-
-    .reference-layout .gap-between {
-        display: none;
-    }
-
-    .reference-layout .toc {
-        display: none;
-    }
 }
