@@ -386,7 +386,7 @@ function Community() {
                         <img
                             src={img.src}
                             onClick={() => setActiveImage(img.src)}
-                            className="rounded-lg filter grayscale opacity-95 hover:grayscale-0 transform hover:scale-[1.02] transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)] will-change-transform cursor-pointer w-full"
+                            className="rounded-lg filter grayscale opacity-95 lg:hover:grayscale-0 transform hover:scale-[1.02] transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)] will-change-transform cursor-pointer w-full"
                         />
                         <div className="text-neutral-600 mt-3">
                             {img.caption}
