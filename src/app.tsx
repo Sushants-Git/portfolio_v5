@@ -326,7 +326,7 @@ function Home() {
                 <Community />
             </div>
 
-            <div className="pb-10 ml-7">
+            <div className="pb-10 px-[30px]">
                 <div>
                     <img
                         src="/sushant.jpg"
