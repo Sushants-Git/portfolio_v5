@@ -189,9 +189,10 @@ function Home() {
                                     >
                                         BTC/ERC20 Testnet Faucet
                                     </TextLink>
-                                    , that has handeled over 100K+ transactions,
-                                    as of Oct 25.
+                                    , widely used by developers for seamless
+                                    testnet transactions.
                                 </li>
+
                                 <li>
                                     Building Demo Apps, for Garden SDK Cookbook.
                                 </li>

@@ -11,6 +11,11 @@
     --leading-fold: var(--lh-fold);
 }
 
+::selection,
+input::selection {
+    background-color: #e2e1de !important;
+}
+
 :root {
     --bg: #fafafa;
     --primary-text: black;
