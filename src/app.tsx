@@ -326,77 +326,75 @@ function Home() {
 
                 <div className="px-[30px] pt-[100px]">
                     <div className="font-bold text-2xl">Community</div>
-                    <div className="mt-15 flex flex-col gap-15">
-                        <Project
-                            title="NAASH"
-                            description="A Shell faster than your thoughts"
-                            github="https://github.com/Sushants-Git/naash"
-                            video="https://www.youtube.com/watch?v=6xZ1Gxxiu1U"
-                            details={[
-                                <>
-                                    AI-powered terminal shell that improves
-                                    speed and efficiency through natural
-                                    language interaction, clipboard and error
-                                    log history.
-                                </>,
-                                <>
-                                    Won{" "}
-                                    <TextLink
-                                        href="https://devfolio.co/projects/yaash-yet-another-ai-shell-192b"
-                                        target="_blank"
-                                    >
-                                        HackThisFall 2024
-                                    </TextLink>{" "}
-                                    Virtual and received a prize of{" "}
-                                    <span className="font-bold">$1000</span>{" "}
-                                    USD.
-                                </>,
-                                <>Stack — Node.js, CLI, AI</>,
-                            ]}
-                        />
+                    <div className="mt-15 flex flex-col gap-10">
+                        <div>
+                            I’m usually the one behind the camera — (yes this
+                            dash is by AI wut you gonna do about it huh, wanna
+                            fight?) designing posters, preparing slides, helping
+                            your lovely speakers (my friends) rehearse their
+                            talks, and assisting hackers in fixing bugs during
+                            workshops.
+                        </div>
+                        <div>
+                            <img
+                                src="/codayhyd.jpeg"
+                                className="rounded-lg filter grayscale opacity-95
+                                   hover:grayscale-0
+                                   transform hover:scale-102
+                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
+                                   will-change-transform cursor-pointer"
+                            />
+                            <div className="text-neutral-600 mt-3">
+                                ~ CodDay Hyd 2024
+                            </div>
+                        </div>
+                        <div>
+                            <img
+                                src="/gang.jpeg"
+                                className="rounded-lg filter grayscale opacity-95
+                                   hover:grayscale-0
+                                   transform hover:scale-102
+                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
+                                   will-change-transform cursor-pointer"
+                            />
+                            <div className="text-neutral-600 mt-3">
+                                ~ Hackerabad Gang (After doing an avent at
+                                collage) (Me the kid on the left)
+                            </div>
+                        </div>
 
-                        <Project
-                            title="Locus"
-                            description="Tracking your focused moments"
-                            github="https://github.com/Sushants-Git/locus"
-                            video="https://www.youtube.com/watch?v=qW-37O67yW0"
-                            details={[
-                                <>
-                                    Intelligent activity tracker that helps you
-                                    understand and improve your focus habits.
-                                </>,
-                                <>
-                                    It’s a{" "}
-                                    <TextLink
-                                        href="https://github.com/Sushants-Git/locus?tab=readme-ov-file#installation"
-                                        target="_blank"
-                                    >
-                                        desktop application
-                                    </TextLink>{" "}
-                                    currently available for Linux distributions.
-                                </>,
-                                <>Stack — Tauri, Rust, React, Linux</>,
-                            ]}
-                        />
+                        <div>
+                            <img
+                                src="/frosthacks.jpeg"
+                                className="rounded-lg filter grayscale opacity-95
+                                   hover:grayscale-0
+                                   transform hover:scale-102
+                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
+                                   will-change-transform cursor-pointer"
+                            />
+                            <div className="text-neutral-600 mt-3">
+                                {`
+                                ~ After winning our first in person Hackthon (All Sleep deprived,
+                                like look at Ashish {guy in center}
+                                he is looking in the abyss)
+                                `}
+                            </div>
+                        </div>
 
-                        <Project
-                            title="DejaVu"
-                            description="A better way of finding bookmarks"
-                            github="https://github.com/Sushants-Git/Deja-Vu"
-                            video="https://www.youtube.com/watch?v=1E9y_XeGhkY"
-                            details={[
-                                <>
-                                    Lightweight Chrome extension powered by a
-                                    local BERT model.
-                                </>,
-                                <>
-                                    Lets you find bookmarks through sentence
-                                    similarity, helpful when you can’t recall
-                                    the exact words.
-                                </>,
-                                <>Stack — Transformers.js, Chrome extension</>,
-                            ]}
-                        />
+                        <div>
+                            <img
+                                src="/ethindia.jpeg"
+                                className="rounded-lg filter grayscale opacity-95
+                                   hover:grayscale-0 w-full
+                                   transform hover:scale-102
+                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
+                                   will-change-transform cursor-pointer"
+                            />
+                            <div className="text-neutral-600 mt-3">
+                                ~ Winning EthIndia 2024 (Me guy on the left
+                                again)
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -411,7 +409,13 @@ function Home() {
                                    transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
                                    will-change-transform cursor-pointer"
                     />
-                    <div className="text-neutral-600 italic mt-2">~ Me at my first in-person hackthon ( aka sleep deprived ) :)</div>
+                    <div className="text-neutral-600 mt-2">
+                        <div>~ Me at my first in-person hackthon </div>
+                        <div>
+                            ~ held at gun point by my frnds to take this picture
+                            lol
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
