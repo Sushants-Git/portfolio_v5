@@ -190,9 +190,7 @@ function Home() {
                                 <ul className="list-disc marker:text-neutral-600 flex flex-col gap-1 pl-5">
                                     <li>
                                         Designed and implemented the recurring
-                                        payments system with single-charge
-                                        billing and precise invoice
-                                        reconciliation.
+                                        payments system.
                                     </li>
                                     <li>
                                         Traced and resolved a critical memory
