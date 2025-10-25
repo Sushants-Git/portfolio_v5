@@ -8,7 +8,7 @@ function App() {
             <div className="relative z-10">
                 <div className="flex">
                     <div className="bg-bg border-l border-lines px-5 ml-auto"></div>
-                    <main className="home md:max-w-[calc(100vw-48px)] pb-[350px] lg:max-w-[1000px] lg:px-[25px] font-inter leading-fold text-lg bg-bg border-r border-lines">
+                    <main className="home md:max-w-[calc(100vw-48px)] pb-[350px] lg:max-w-[1000px] lg:pr-[25px] font-inter leading-fold text-lg bg-bg border-l border-r border-lines/50">
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/blog" element={<Blog />} />
@@ -31,7 +31,7 @@ function App() {
 
 function PatternSVG() {
     return (
-        <div className="text-lines fixed inset-0">
+        <div className="text-lines/60 fixed inset-0">
             <svg width="100%" height="100%">
                 <defs>
                     <pattern
