@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import "./app.css";
+import { useState } from "react";
 
 function App() {
     return (
@@ -322,79 +323,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="px-[30px] pt-[100px]">
-                    <div className="font-bold text-2xl">Community</div>
-                    <div className="mt-15 flex flex-col gap-10">
-                        <div>
-                            I’m usually the one behind the camera — (yes this
-                            dash is by AI wut you gonna do about it huh, wanna
-                            fight?) designing posters, preparing slides, helping
-                            your lovely speakers (my friends) rehearse their
-                            talks, and assisting hackers in fixing bugs during
-                            workshops.
-                        </div>
-                        <div>
-                            <img
-                                src="/codayhyd.jpeg"
-                                className="rounded-lg filter grayscale opacity-95
-                                   hover:grayscale-0
-                                   transform hover:scale-102
-                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
-                                   will-change-transform cursor-pointer"
-                            />
-                            <div className="text-neutral-600 mt-3">
-                                ~ CodDay Hyd 2024
-                            </div>
-                        </div>
-                        <div>
-                            <img
-                                src="/gang.jpeg"
-                                className="rounded-lg filter grayscale opacity-95
-                                   hover:grayscale-0
-                                   transform hover:scale-102
-                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
-                                   will-change-transform cursor-pointer"
-                            />
-                            <div className="text-neutral-600 mt-3">
-                                ~ Hackerabad Gang (After doing an avent at
-                                collage) (Me the kid on the left)
-                            </div>
-                        </div>
-
-                        <div>
-                            <img
-                                src="/frosthacks.jpeg"
-                                className="rounded-lg filter grayscale opacity-95
-                                   hover:grayscale-0
-                                   transform hover:scale-102
-                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
-                                   will-change-transform cursor-pointer"
-                            />
-                            <div className="text-neutral-600 mt-3">
-                                {`
-                                ~ After winning our first in person Hackthon (All Sleep deprived,
-                                like look at Ashish {guy in center}
-                                he is looking in the abyss)
-                                `}
-                            </div>
-                        </div>
-
-                        <div>
-                            <img
-                                src="/ethindia.jpeg"
-                                className="rounded-lg filter grayscale opacity-95
-                                   hover:grayscale-0 w-full
-                                   transform hover:scale-102
-                                   transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)]
-                                   will-change-transform cursor-pointer"
-                            />
-                            <div className="text-neutral-600 mt-3">
-                                ~ Winning EthIndia 2024 (Me guy on the left
-                                again)
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Community />
             </div>
 
             <div className="pb-10 ml-7">
@@ -417,6 +346,110 @@ function Home() {
                 </div>
             </div>
         </>
+    );
+}
+
+function Community() {
+      const [activeImage, setActiveImage] = useState(null);
+
+    const images = [
+        { src: "/codayhyd.jpeg", caption: "~ Organising CodDay Hyd 2024" },
+        {
+            src: "/gang.jpeg",
+            caption:
+                "~ Hackerabad Gang (After doing an event at college) (Me the kid on the left)",
+        },
+        {
+            src: "/frosthacks.jpeg",
+            caption: `~ After winning our first in-person hackathon (All sleep-deprived, like look at Ashish {guy in center}, he’s staring into the abyss)`,
+        },
+        {
+            src: "/ethindia.jpeg",
+            caption: "~ Winning EthIndia 2024 (Me guy on the left again)",
+        },
+    ];
+
+    return (
+        <div className="px-[30px] pt-[100px]">
+            <div className="font-bold text-2xl">Community</div>
+            <div className="mt-15 flex flex-col gap-10">
+                <div>
+                    I’m usually the one behind the camera — (yes this dash is by
+                    AI, what you gonna do about it huh, wanna fight?) designing
+                    posters, preparing slides, helping your lovely speakers (my
+                    friends) rehearse their talks, and assisting hackers in
+                    fixing bugs during workshops.
+                </div>
+
+                {images.map((img, i) => (
+                    <div key={i}>
+                        <img
+                            src={img.src}
+                            onClick={() => setActiveImage(img.src)}
+                            className="rounded-lg filter grayscale opacity-95 hover:grayscale-0 transform hover:scale-[1.02] transition duration-200 ease-[cubic-bezier(.215,.61,.355,1)] will-change-transform cursor-pointer w-full"
+                        />
+                        <div className="text-neutral-600 mt-3">
+                            {img.caption}
+                        </div>
+                    </div>
+                ))}
+
+                {activeImage && (
+                    <div
+                        className="fixed inset-0 backdrop-blur-xs flex items-center justify-center z-50 lg:hidden"
+                        onClick={() => setActiveImage(null)}
+                    >
+                        <img
+                            src={activeImage}
+                            className="w-[95%] max-h-[80%] rounded-lg object-contain
+                                       scale-90 blur-[1px] opacity-90
+                                       animate-zoomIn"
+                        />
+                    </div>
+                )}
+            </div>
+
+            {/* animation styles */}
+            <style jsx>{`
+                @keyframes zoomIn {
+                    0% {
+                        transform: scale(0.9);
+                        filter: blur(3px);
+                        opacity: 0.6;
+                    }
+                    70% {
+                        transform: scale(1.02);
+                        filter: blur(1.5px);
+                        opacity: 0.95;
+                    }
+                    100% {
+                        transform: scale(1);
+                        filter: blur(0);
+                        opacity: 1;
+                    }
+                }
+
+                .animate-zoomIn {
+                    animation: zoomIn 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)
+                        forwards;
+                    will-change: transform, filter, opacity;
+                }
+
+                @media (hover: none) and (pointer: coarse) {
+                    img:hover {
+                        transform: none;
+                    }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .animate-zoomIn {
+                        animation: none;
+                        transform: scale(1);
+                        filter: none;
+                    }
+                }
+            `}</style>
+        </div>
     );
 }
 
