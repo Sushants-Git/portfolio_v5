@@ -339,8 +339,7 @@ function Home() {
                     <div className="text-neutral-600 mt-2">
                         <div>~ Me at my first in-person hackthon </div>
                         <div>
-                            ~ held at gun point by my frnds to take this picture
-                            lol
+                            ~ held at gun point by my friends to take this picture :)
                         </div>
                     </div>
                 </div>
