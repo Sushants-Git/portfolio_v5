@@ -7,14 +7,14 @@ function App() {
             <PatternSVG />
             <div className="relative z-10">
                 <div className="flex">
-                    <div className="bg-bg border-l border-lines px-5 ml-auto"></div>
+                    <div className="bg-bg border-l border-lines px-5 ml-auto hidden md:block"></div>
                     <main className="home md:max-w-[calc(100vw-48px)] pb-[350px] lg:max-w-[1000px] lg:pr-[25px] font-inter leading-fold text-lg bg-bg border-l border-r border-lines/50">
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/blog" element={<Blog />} />
                         </Routes>
                     </main>
-                    <div className="bg-bg px-5 mr-auto border-r border-lines"></div>
+                    <div className="bg-bg px-5 mr-auto border-r border-lines hidden md:block"></div>
                 </div>
 
                 <div className="text-center mt-auto px-[30px] py-[50px] text-neutral-400 text-lg border border-lines">
