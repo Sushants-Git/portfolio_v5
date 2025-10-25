@@ -350,7 +350,7 @@ function Home() {
 }
 
 function Community() {
-      const [activeImage, setActiveImage] = useState(null);
+      const [activeImage, setActiveImage] = useState<string | null>(null);
 
     const images = [
         { src: "/codayhyd.jpeg", caption: "~ Organising CodDay Hyd 2024" },
@@ -410,7 +410,7 @@ function Community() {
             </div>
 
             {/* animation styles */}
-            <style jsx>{`
+            <style>{`
                 @keyframes zoomIn {
                     0% {
                         transform: scale(0.9);
