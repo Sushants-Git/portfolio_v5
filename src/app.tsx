@@ -530,7 +530,7 @@ function Socials() {
 
             <span>
                 <IconLink
-                    href="https://drive.google.com/file/u/1/d/1_Uo8pYHEoMMToxWTusjjn189Av2WvY4k/view?usp=sharing"
+                    href="https://docs.google.com/document/d/1l2qiMb_H2UA6qakfgKl1R4_q_5NO5Dum4LZx6-LA05M/edit?usp=sharing"
                     target="_blank"
                     className="[&>svg]:w-[1.2rem] [&>svg]:h-[1.2rem]"
                 >
