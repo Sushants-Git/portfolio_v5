@@ -164,10 +164,10 @@ function Home() {
                             building performant web and desktop applications.
                             Currently, I write and fix bugs at{" "}
                             <TextLink
-                                href="https://getswipe.in/"
+                                href="https://devfolio.co/home/"
                                 target="_blank"
                             >
-                                Swipe (YC&nbsp;S21)
+                                Devfolio
                             </TextLink>
                             . When I’m not writing bugs, I like to design.
                         </div>
@@ -183,7 +183,7 @@ function Home() {
                                     Swipe (YC S21)
                                 </div>
                                 <div className="text-neutral-600">
-                                    Full-Time · Jan 25 - Current
+                                    Full-Time · Jan 25 - Dec 25
                                 </div>
                             </div>
 
@@ -339,7 +339,8 @@ function Home() {
                     <div className="text-neutral-600 mt-2">
                         <div>~ Me at my first in-person hackthon </div>
                         <div>
-                            ~ held at gun point by my friends to take this picture :)
+                            ~ held at gun point by my friends to take this
+                            picture :)
                         </div>
                     </div>
                 </div>
@@ -349,7 +350,7 @@ function Home() {
 }
 
 function Community() {
-      const [activeImage, setActiveImage] = useState<string | null>(null);
+    const [activeImage, setActiveImage] = useState<string | null>(null);
 
     const images = [
         { src: "/codayhyd.jpeg", caption: "~ Organising CodDay Hyd 2024" },
