@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import "./app.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
     return (
@@ -173,6 +173,8 @@ function Home() {
                         </div>
                     </div>
                 </div>
+
+                <Spotify />
 
                 <div className="px-[30px] pt-[100px]">
                     <div className="font-bold text-2xl">Experience</div>
@@ -571,6 +573,143 @@ function VideoSvg() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <path d="M581.7 188.1C575.5 164.4 556.9 145.8 533.4 139.5C490.9 128 320.1 128 320.1 128C320.1 128 149.3 128 106.7 139.5C83.2 145.8 64.7 164.4 58.4 188.1C47 231 47 320.4 47 320.4C47 320.4 47 409.8 58.4 452.7C64.7 476.3 83.2 494.2 106.7 500.5C149.3 512 320.1 512 320.1 512C320.1 512 490.9 512 533.5 500.5C557 494.2 575.5 476.3 581.8 452.7C593.2 409.8 593.2 320.4 593.2 320.4C593.2 320.4 593.2 231 581.8 188.1zM264.2 401.6L264.2 239.2L406.9 320.4L264.2 401.6z" />
         </svg>
+    );
+}
+
+type SpotifyTrack = {
+    title: string;
+    artist: string;
+    url: string;
+    albumArt: string | null;
+};
+
+type SpotifyData = {
+    isPlaying: boolean;
+    nowPlaying?: SpotifyTrack;
+    lastPlayed: SpotifyTrack | null;
+    favourite: SpotifyTrack | null;
+};
+
+function ExternalLinkIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="w-3.5 h-3.5 text-neutral-400 flex-shrink-0"
+        >
+            <path d="M15 3h6v6" />
+            <path d="M10 14 21 3" />
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        </svg>
+    );
+}
+
+function SpotifyTrackRow({
+    label,
+    track,
+}: {
+    label: string;
+    track: SpotifyTrack;
+}) {
+    return (
+        <div>
+            <div className="text-neutral-600 text-base mb-2">{label}</div>
+            <a
+                href={track.url}
+                target="_blank"
+                className="flex gap-3 items-center"
+            >
+                {track.albumArt && (
+                    <img
+                        src={track.albumArt}
+                        alt=""
+                        className="w-10 h-10 rounded flex-shrink-0"
+                    />
+                )}
+                <div className="flex-1 min-w-0">
+                    <div className="font-medium leading-tight">{track.title}</div>
+                    <div className="text-neutral-600 text-base">{track.artist}</div>
+                </div>
+                <ExternalLinkIcon />
+            </a>
+        </div>
+    );
+}
+
+function Spotify() {
+    const [data, setData] = useState<SpotifyData | null>(null);
+
+    useEffect(() => {
+        const load = () =>
+            fetch("/api/spotify")
+                .then((r) => r.json())
+                .then(setData)
+                .catch(() => {});
+        load();
+        const id = setInterval(load, 30_000);
+        return () => clearInterval(id);
+    }, []);
+
+    if (!data) return null;
+
+    return (
+        <div className="px-[30px] pt-[100px]">
+            <div className="font-bold text-2xl">Music</div>
+            <div className="mt-15 flex flex-col gap-8">
+                {data.isPlaying && data.nowPlaying ? (
+                    <div>
+                        <div className="flex items-center gap-2 text-neutral-600 text-base mb-2">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                            </span>
+                            Now Playing
+                        </div>
+                        <a
+                            href={data.nowPlaying.url}
+                            target="_blank"
+                            className="flex gap-3 items-center"
+                        >
+                            {data.nowPlaying.albumArt && (
+                                <img
+                                    src={data.nowPlaying.albumArt}
+                                    alt=""
+                                    className="w-10 h-10 rounded flex-shrink-0"
+                                />
+                            )}
+                            <div className="flex-1 min-w-0">
+                                <div className="font-medium leading-tight">
+                                    {data.nowPlaying.title}
+                                </div>
+                                <div className="text-neutral-600">
+                                    {data.nowPlaying.artist}
+                                </div>
+                            </div>
+                            <ExternalLinkIcon />
+                        </a>
+                    </div>
+                ) : data.lastPlayed ? (
+                    <SpotifyTrackRow
+                        label="Last played"
+                        track={data.lastPlayed}
+                    />
+                ) : null}
+
+                {data.favourite && (
+                    <SpotifyTrackRow
+                        label="Favourite this month"
+                        track={data.favourite}
+                    />
+                )}
+            </div>
+        </div>
     );
 }
 
